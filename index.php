@@ -22,6 +22,7 @@ if($country == 'RU'){
 <head>
 	<title>Дистанционное обучение - Конференция ELForum 2016 Киев</title>
     <meta charset="utf-8">
+    <meta name="robots" content="nofollow,noindex" />
 	<link href="css/style.css" rel="stylesheet" type="text/css"/> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="og:title" content="ELFORUM 2016" />
