@@ -1,22 +1,4 @@
-<?php
-//error_reporting(E_ALL);
-//ini_set('display_errors',1);
 
-$country = geoip_country_code_by_name($_SERVER['REMOTE_ADDR']);
-if($country == 'RU'){
-    $currency = 'руб.';
-    $price = 7200;
-    $new_price = 3700;
-    $online_price = 2800;
-    $form_condition = 'style="display:none;"';
-} else {
-    $currency = 'грн.';
-    $price = 2300;
-    $new_price = 1250;
-    $online_price = 990;
-    $form_condition = '';
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -869,8 +851,8 @@ jQuery(function (f) {
 			    <div class="corner bottom right"></div>
 					<div class="block-left">
 						<p>При оплате до 28 ноября: </p>
-						<p><?php echo $price . ' ' . $currency; ?></p>
-						<p><?php echo $new_price . ' ' . $currency; ?></p>
+						<p>2800 грн.</p>
+						<p>1500 грн.</p>
 					</div>
 					<div class="block-right">
 						<a href="#reg" class="btn btn-jump">Забронировать место</a>
@@ -886,7 +868,7 @@ jQuery(function (f) {
 				</div>
 			</div>
 			<p>Не можете приехать? <a href="#reg">Закажите online-трансляцию заранее</a></p>
-			<p>Стоимость: <span><?php echo $online_price . ' ' . $currency; ?></span></p>
+			<p>Стоимость: <span>900 грн.</span></p>
 				
 		
 		</div>
@@ -921,7 +903,6 @@ jQuery(function (f) {
 						<br/>
 						<img src="images/3-ych.png" alt=""><p> &nbsp;&nbsp;- скидка 15%</p>
 					</div>
-					<input name="ych" type="number" min="1" max="100" required class="ych" onchange="updateAmount(this.value,<?php echo $new_price; ?>,1)" value="1">
 					<div class="clearfix"></div>
 					<p>Имя </p>
 					<input name="name" type="text" id="name_so" required>
@@ -931,8 +912,6 @@ jQuery(function (f) {
 					<input name="email" id="email_so" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{1,20}$" required>
 					<p>Телефон</p>
 					<input name="phone" id="phone_so" type="text" required minlength="10">
-					<input id="bill_live_places" type="hidden" data-vtigerfield='bill_live_place' value="1">
-					<input id="bill_live_amount" type="hidden" data-vtigerfield='bill_live_amount' value="<?php echo $new_price; ?>">
 					<p><a href="javascript: displ('var-15')">У вас есть промокод?</a></p>
 						<div id="var-15" style="display: none;width:100%">
 							<input name="promo" type="text">
@@ -944,7 +923,7 @@ jQuery(function (f) {
 			</div>
 			<div class="block-right">
 				<p>Сумма к оплате:</p>
-				<p id="amount" class="zag-green"><?php echo $new_price . ' ' . $currency; ?></p>
+				<p id="amount" class="zag-green">1500 грн.</p>
 
 				<p>Запросить счет и документы</p>
 				<form action="/#thanks-elforum">
